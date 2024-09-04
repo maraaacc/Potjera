@@ -1,9 +1,6 @@
-import "./App.css";
+import { Router } from "./routes/index";
+const App = () => {
+  return <Router />;
+};
 
-import { MainLayout } from "./layouts/MainLayout";
-
-function App() {
-  return <MainLayout />;
-}
-
-export default App;
+export { App };
