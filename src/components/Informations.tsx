@@ -1,8 +1,18 @@
 const Informations = () => {
+  function start() {
+    console.log("hi");
+  }
+  function enterEvent(event: any) {
+    if (event.key === "Enter") {
+      start();
+    }
+  }
   return (
     <div className="flex">
-      <div className="text-[20px] font-['PT_Serif',_serif]  text-[#ffffff]  tracking-[2px] p-6 leading-loose">
-        <h3 id="pPozdrav"></h3>
+      <div className="text-[18px] font-['PT_Serif',_serif]  text-[#ffffff]  tracking-[2px] p-6 leading-loose">
+        <h3 id="pPozdrav" className="text-[25px]">
+          Dobar dan{" "}
+        </h3>
         <p>
           Kviz traje <b>1min</b>, vrijeme i kviz kreću klikom na gumb
           <b>"Kreni"</b>, svako točno pitanje nosi
@@ -29,7 +39,10 @@ const Informations = () => {
           <b>"Odgovori"</b> ili koristite tipku <b>'Enter'</b>.
         </p>
         <center>
-          <button className="text-[white] bg-[#547a9c] font-['PT_Serif',_serif] text-[18px] tracking-[2px] border-[#243252] mt-[12px] w-[120px] h-[40px] pt-[6px] pb-[3px] rounded-[3px]">
+          <button
+            className="text-[white] bg-[#547a9c] font-['PT_Serif',_serif] text-[18px] tracking-[2px] border-[#243252] mt-[6px] w-[120px]  pt-[6px] pb-[3px] rounded-[3px]"
+            onClick={() => start()}
+          >
             KRENI
           </button>
         </center>

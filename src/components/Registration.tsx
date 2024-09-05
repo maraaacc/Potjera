@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const [name, setName] = useState<string>("");
@@ -8,8 +7,7 @@ const Registration = () => {
   function start(): void {
     if (rgxPattern.test(name)) {
       console.log("hello");
-      const navigate = useNavigate();
-      navigate("/pravila");
+      localStorage.setItem("kIme", name);
     } else {
       alert("Korisničko ime nije ispravno!");
     }

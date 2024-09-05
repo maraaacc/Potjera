@@ -1,10 +1,11 @@
 import React, { Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Board } from "../components/Board";
 import { Informations } from "../components/Informations";
+import { Questions } from "../components/Questions";
 import { Registration } from "../components/Registration";
+import { BoardLayout } from "../layouts/BoardLayout";
 import { MainLayout } from "../layouts/MainLayout";
-
-import { HomePage } from "../pages/HomePage";
 
 export const routes = [
   {
@@ -21,8 +22,19 @@ export const routes = [
         element: <Informations />,
       },
       {
-        path: "kviz",
-        element: <Informations />,
+        path: "minuta_znanja",
+        element: <Questions />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <BoardLayout />,
+    errorElement: <>Error page</>,
+    children: [
+      {
+        path: "ploca",
+        element: <Board />,
       },
     ],
   },
